@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Calculator</title>
+</head>
+<body>
+    <form action="{{ url_for('add')}}" method="post">        <!--   add => function name    -->
+        <!-- <input type="text" name="mat1" id="mat1" placeholder="Enter first matrix">
+        <input type="text" name="mat2" id="mat2" placeholder="Enter second matrix"> -->
+
+        <textarea name="mat1" id="mat1"></textarea>
+        <br>
+        <textarea name="mat2" id="mat2"></textarea>
+        <br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
