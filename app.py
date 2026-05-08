@@ -23,7 +23,8 @@ def add():
             matrix2.append(list(map(int, idx.split())))
         matrix1 = np.array(matrix1)
         matrix2 = np.array(matrix2)
-        result = np.matmul(matrix1, matrix2)
+        # result = np.matmul(matrix1, matrix2)
+        result = matrix1 + matrix2
         return render_template("result.html", result = result.tolist())
 
 
