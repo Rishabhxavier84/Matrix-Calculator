@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder="templates")
 def home():
     return "Hello"
 
-@app.route("/api/add", methods=["GET", "POST"])
+@app.route("/api/calculator", methods=["GET", "POST"])
 def add():
     if request.method == "GET":
         return render_template("index.html")
@@ -23,9 +23,22 @@ def add():
             matrix2.append(list(map(int, idx.split())))
         matrix1 = np.array(matrix1)
         matrix2 = np.array(matrix2)
-        # result = np.matmul(matrix1, matrix2)
-        result = matrix1 + matrix2
-        return render_template("result.html", result = result.tolist())
+        operations = request.form["operations"]
+        try:
+            matrix1.shape == matrix2.shape
+            if operations == "add":
+                result = matrix1 + matrix2
+            elif operations == "sub":
+                result = matrix1 - matrix2
+            elif operations == "norm_mul":
+                result = matrix1 * matrix2
+            elif operations == "mat_mul":
+                result = np.matmul(matrix1, matrix2)
+            elif operations == "transpose":
+                result = matrix1.T
+            return render_template("result.html", result = result.tolist())
+        except Exception as e:
+            return str(e)
 
 
 if __name__ == "__main__":
