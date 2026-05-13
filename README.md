@@ -6,3 +6,5 @@ This python flask project performs matrix calculations like addition, subtractio
 - Numpy
 - Flask
 - HTML
+- CSS
+- Bootstrap
