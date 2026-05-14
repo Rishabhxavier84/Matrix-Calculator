@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <form action="{{ url_for('add')}}" method="post">
+    <form action="{{ url_for('operations')}}" method="post">
       <div class="m-5 p-5 container border rounded">
         <h1 class="mb-1 p-5">Matrix Calculator</h1>
         <!--   add => function name    -->
@@ -49,11 +49,18 @@
           name="operations"
           id="operations"
         >
-          <option value="add">Addition</option>
-          <option value="sub">Subtraction</option>
-          <option value="norm_mul">Normal Multiplication</option>
-          <option value="mat_mul">Matrix Multiplication</option>
-          <option value="transpose">Transpose</option>
+          <optgroup label="Matrix 1">
+            <option value="transpose">Transpose</option>
+            <option value="shape">Shape</option>
+            <option value="flip">Flip</option>
+          </optgroup>
+          <optgroup label="Matrix 1 and Matrix 2">
+            <option value="add">Addition</option>
+            <option value="sub">Subtraction</option>
+            <option value="norm_mul">Normal Multiplication</option>
+            <option value="div">Division</option>
+            <option value="mat_mul">Matrix Multiplication</option>
+          </optgroup>
         </select>
         <br />
         <button type="submit" class="btn btn-primary">Result</button>
